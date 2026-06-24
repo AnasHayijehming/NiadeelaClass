@@ -25,6 +25,29 @@
 - Interaction checks: grade filter activates and hides nonmatching cards; all gallery routes return HTTP 200; addition, multiplication, and word-problem games respond to answer input and update feedback/score.
 - Patches made since previous QA pass: fixed final progress bars, prevented skipping unanswered word problems, adjusted mobile wrapping and filter stacking.
 
+**2026-06-24 Addition Adventure Integration**
+- Added app route: `apps/math-addition-adventure/index.html`.
+- Imported source game: `apps/math-addition-adventure/game.html` from `C:\Users\anash\Documents\Codex\2026-06-24\new-chat-2\outputs\math-addition-adventure.html`; SHA-256 matched after copy.
+- Gallery thumbnail: `assets/math-addition-adventure.png`, captured from the real game start screen.
+- New QA screenshots: `qa-screenshots/addition-adventure-gallery-1440.png`, `qa-screenshots/addition-adventure-gallery-mobile.png`, `qa-screenshots/addition-adventure-wrapper-1280.png`, and `qa-screenshots/addition-adventure-wrapper-mobile.png`.
+- Interaction check: gallery card opens the wrapper route, iframe loads the game, start button opens mode selection, and practice mode opens the math board.
+- Visual check: desktop gallery shows four cards in the shelf grid; mobile gallery and mobile wrapper do not show obvious text overlap or blank iframe state.
+
+**2026-06-24 Mobile Mission Text Fix**
+- Fixed the mobile mission intro by keeping the seedling icon and text in a two-column grid at `max-width: 640px`.
+- Replaced forced `word-break: break-all` with normal Thai wrapping plus emergency `overflow-wrap: break-word`.
+- QA screenshots: `qa-screenshots/mobile-responsive-after.png` at `390x844` and `qa-screenshots/mobile-responsive-after-585.png` at `585x420`.
+- Visual check: mission copy stays beside the icon and does not visibly overflow horizontally on both checked widths.
+
+**2026-06-24 Yala Math Tutor Integration**
+- Added app route: `apps/yala-math-tutor/index.html`.
+- Imported source build from `C:\Users\anash\Documents\Codex\2026-06-23\grill-me-animation-scrolling-scrolling-scrolling\dist\index.html`.
+- The copied build at `apps/yala-math-tutor/site/index.html` inlines its Vite JS/CSS and embeds the three classroom scene PNGs as data URIs so the app renders under `file://` without module or WebGL texture CORS failures.
+- Gallery thumbnail: `assets/yala-math-tutor.png`, captured from the real rendered app with all textures loaded.
+- New QA screenshots: `qa-screenshots/yala-math-tutor-gallery-1440.png`, `qa-screenshots/yala-math-tutor-gallery-mobile.png`, `qa-screenshots/yala-math-tutor-wrapper-1280.png`, and `qa-screenshots/yala-math-tutor-wrapper-mobile.png`.
+- Interaction check: gallery card opens the wrapper route, iframe renders the tutor page, `window.__classroom3D.loadedTextures` reports 3 textures, and iframe scroll changes animation progress.
+- Visual check: desktop wrapper uses a taller scroll-site panel to avoid hero overlap; mobile wrapper remains readable within the app shell.
+
 **Follow-up Polish**
 - [P3] If this becomes a real teacher portfolio, replace sample profile/contact text and tune the exact grade group labels to the school curriculum.
 - [P3] Add more project cards when real classroom web apps are available.

@@ -139,7 +139,7 @@ h1 {
   font-size: 1.12rem;
   max-width: 44ch;
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .mission-mark {
@@ -197,7 +197,7 @@ h1 {
   color: var(--muted);
   max-width: 58ch;
   min-width: 0;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
 .filters {
@@ -555,8 +555,18 @@ h1 {
   }
 
   .mission {
-    grid-template-columns: 1fr;
-    gap: 8px;
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .mission p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .mission-mark {
+    font-size: 1.6rem;
+    line-height: 1;
   }
 
   .mission p,
@@ -566,7 +576,8 @@ h1 {
   h2,
   h3 {
     max-width: 100%;
-    word-break: break-all;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .teacher-logo {

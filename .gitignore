@@ -4,7 +4,10 @@ desktop.ini
 
 .vscode/
 .idea/
+.playwright-cli/
 
 *.log
 *.tmp
 *.bak
+
+.playwright-cli/
