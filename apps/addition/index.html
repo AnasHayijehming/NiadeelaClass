@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>เกมฝึกเลขบวกลบ | ห้องเรียนครูนิอาดีลา</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../app.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="app-topbar" aria-label="นำทาง">
+        <a class="back-link" href="../../index.html#works">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          กลับไปหน้า Gallery
+        </a>
+        <p class="app-label">Static Math App / ป.1-2</p>
+      </nav>
+
+      <section class="game-card" aria-labelledby="game-title">
+        <header class="game-header">
+          <div>
+            <h1 id="game-title">เกมฝึกเลขบวกลบ</h1>
+            <p>ฝึกบวกและลบจำนวนไม่เกิน 100 พร้อมเฉลยทันที</p>
+          </div>
+          <div class="score-row" aria-label="คะแนนและความคืบหน้า">
+            <div class="score-pill">
+              <strong id="score">0</strong>
+              <span>คะแนน</span>
+            </div>
+            <div class="score-pill">
+              <strong id="streak">0</strong>
+              <span>ตอบต่อเนื่อง</span>
+            </div>
+            <div class="score-pill">
+              <strong id="round">1/10</strong>
+              <span>ข้อที่</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="game-stage">
+          <section class="question-panel" aria-live="polite">
+            <p class="question-kicker" id="operation-label">บวกเลข</p>
+            <h2 class="question" id="question">37 + 48 = ?</h2>
+            <div class="answers" id="answers"></div>
+            <p class="feedback" id="feedback">เลือกคำตอบที่ถูกต้อง</p>
+          </section>
+
+          <aside class="side-panel" aria-label="คำอธิบายเกม">
+            <div class="side-box">
+              <h2>วิธีเล่น</h2>
+              <p>
+                อ่านโจทย์ เลือกคำตอบจาก 3 ตัวเลือก
+                ตอบถูกต่อเนื่องจะได้คะแนนเพิ่ม
+              </p>
+            </div>
+            <div class="side-box">
+              <h2>ความคืบหน้า</h2>
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-bar" id="progress"></div>
+              </div>
+              <p id="progress-text">เริ่มข้อที่ 1 จาก 10</p>
+            </div>
+            <div class="side-box">
+              <h2>เป้าหมาย</h2>
+              <p>ฝึกคำนวณในใจและลดความกลัวตัวเลขสำหรับนักเรียนช่วงต้นประถม</p>
+              <div class="mini-visual" aria-hidden="true">
+                <span style="--tile: 1">10</span>
+                <span style="--tile: 2">25</span>
+                <span style="--tile: 3">50</span>
+                <span style="--tile: 4">100</span>
+              </div>
+            </div>
+            <button class="secondary-action" type="button" id="restart">
+              <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+              เริ่มใหม่
+            </button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="addition.js"></script>
+  </body>
+</html>

@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ห้องเรียนครูนิอาดีลา</title>
+    <meta
+      name="description"
+      content="ห้องเรียนครูนิอาดีลา รวมเว็บแอป static สำหรับคณิตศาสตร์ระดับประถม เกมฝึกบวกลบ สูตรคูณ และโจทย์ปัญหา"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#works">ข้ามไปดูผลงาน</a>
+
+    <header class="site-header" aria-label="ข้อมูลครู">
+      <div class="identity">
+        <img
+          class="teacher-logo"
+          src="assets/teacher-logo.png"
+          alt="สัญลักษณ์ห้องเรียนครูนิอาดีลา"
+        />
+        <div>
+          <p class="eyebrow">แฟ้มผลงานเว็บแอปการเรียนรู้</p>
+          <h1>ห้องเรียนครูนิอาดีลา</h1>
+          <p class="role">สื่อคณิตศาสตร์ ระดับประถมศึกษา</p>
+        </div>
+      </div>
+
+      <div class="mission" aria-label="แนวคิดการสอน">
+        <span class="mission-mark" aria-hidden="true">
+          <i class="fa-solid fa-seedling"></i>
+        </span>
+        <p>
+          มุ่งพัฒนาการเรียนรู้คณิตศาสตร์อย่างเข้าใจ ผ่านสื่อที่สนุก ใช้ง่าย
+          และต่อยอดได้ในชีวิตประจำวัน
+        </p>
+      </div>
+
+      <a class="contact-link" href="mailto:teacher.math@example.com">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+        ติดต่อครู
+      </a>
+    </header>
+
+    <main>
+      <section class="gallery-section" id="works" aria-labelledby="works-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">ผลงานที่กดเข้าเล่นได้</p>
+            <h2 id="works-title">คลังเกมคณิตศาสตร์ประถม</h2>
+          </div>
+          <p>
+            เลือกเกมจากภาพผลงานเพื่อเปิดเว็บแอป static ย่อย แต่ละเกมทำงานได้ใน
+            browser โดยไม่ต้องติดตั้งระบบหลังบ้าน
+          </p>
+        </div>
+
+        <div class="filters" aria-label="กรองผลงาน">
+          <button class="filter-button is-active" type="button" data-filter="all">
+            <i class="fa-solid fa-table-cells-large" aria-hidden="true"></i>
+            เกมทั้งหมด
+          </button>
+          <button class="filter-button" type="button" data-filter="lower">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            ป.1-2
+          </button>
+          <button class="filter-button" type="button" data-filter="middle">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            ป.3-4
+          </button>
+          <button class="filter-button" type="button" data-filter="upper">
+            <i class="fa-solid fa-users" aria-hidden="true"></i>
+            ป.5-6
+          </button>
+          <label class="filter-dropdown" for="project-filter">
+            <span>กรองผลงาน</span>
+            <select id="project-filter" aria-label="กรองผลงาน">
+              <option value="all">เกมทั้งหมด</option>
+              <option value="lower">ป.1-2</option>
+              <option value="middle">ป.3-4</option>
+              <option value="upper">ป.5-6</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="shelf-wrap">
+          <div class="project-grid">
+            <article class="project-card" data-levels="lower" style="--delay: 80ms">
+              <a class="project-image-link" href="apps/addition/index.html">
+                <img
+                  src="assets/addition-game.png"
+                  alt="ภาพตัวอย่างเกมฝึกเลขบวกลบ"
+                />
+                <span class="open-badge">เข้าเล่น</span>
+              </a>
+              <div class="project-copy">
+                <div>
+                  <p class="grade-pill">ระดับชั้น ป.1-2</p>
+                  <h3>เกมฝึกเลขบวกลบ</h3>
+                  <p>
+                    ฝึกบวกและลบจำนวนไม่เกิน 100 พร้อมคะแนน ความต่อเนื่อง
+                    และเฉลยทันทีหลังตอบ
+                  </p>
+                </div>
+                <a class="text-link" href="apps/addition/index.html">
+                  เข้าเล่น
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-levels="middle upper"
+              style="--delay: 180ms"
+            >
+              <a class="project-image-link" href="apps/multiplication/index.html">
+                <img
+                  src="assets/multiplication-game.png"
+                  alt="ภาพตัวอย่างเกมฝึกคูณ 2 ถึง 12"
+                />
+                <span class="open-badge">เข้าเล่น</span>
+              </a>
+              <div class="project-copy">
+                <div>
+                  <p class="grade-pill">ระดับชั้น ป.3-6</p>
+                  <h3>เกมฝึกคูณ 2-12</h3>
+                  <p>
+                    ฝึกท่องตารางคูณแบบจับเวลา เลือกคำตอบจากตัวเลือก
+                    และสะสมคะแนนจากความเร็ว
+                  </p>
+                </div>
+                <a class="text-link" href="apps/multiplication/index.html">
+                  เข้าเล่น
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+
+            <article
+              class="project-card"
+              data-levels="middle upper"
+              style="--delay: 280ms"
+            >
+              <a class="project-image-link" href="apps/word-problems/index.html">
+                <img
+                  src="assets/word-problem-game.png"
+                  alt="ภาพตัวอย่างเกมโจทย์ปัญหาประจำวัน"
+                />
+                <span class="open-badge">เข้าเล่น</span>
+              </a>
+              <div class="project-copy">
+                <div>
+                  <p class="grade-pill">ระดับชั้น ป.3-6</p>
+                  <h3>เกมโจทย์ปัญหาประจำวัน</h3>
+                  <p>
+                    อ่านสถานการณ์ใกล้ตัว คิดวิเคราะห์ แล้วกรอกคำตอบตัวเลข
+                    เพื่อฝึกแก้โจทย์อย่างเป็นขั้นตอน
+                  </p>
+                </div>
+                <a class="text-link" href="apps/word-problems/index.html">
+                  เข้าเล่น
+                  <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </article>
+          </div>
+          <div class="wood-shelf" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <section class="teacher-notes" aria-label="ข้อมูลเพิ่มเติม">
+        <article>
+          <i class="fa-solid fa-user" aria-hidden="true"></i>
+          <div>
+            <h2>เกี่ยวกับครู</h2>
+            <p>
+              จบการศึกษาคณะศึกษาศาสตร์ สาขาคณิตศาสตร์
+              มีประสบการณ์สอนระดับประถมศึกษา 8 ปี
+            </p>
+          </div>
+        </article>
+        <article>
+          <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+          <div>
+            <h2>แนวทางการสอน</h2>
+            <p>
+              เน้นความเข้าใจจากการลงมือทำ เชื่อมโยงคณิตศาสตร์กับชีวิตจริง
+              และสร้างทัศนคติที่ดีต่อการเรียนรู้
+            </p>
+          </div>
+        </article>
+        <article>
+          <i class="fa-regular fa-folder" aria-hidden="true"></i>
+          <div>
+            <h2>ผลงานอื่น ๆ</h2>
+            <p>
+              สื่อการสอน ใบงาน และกิจกรรมสามารถขยายเพิ่มใน gallery
+              ได้ทันทีเมื่อมีผลงานใหม่
+            </p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Static portfolio for elementary math learning apps</p>
+      <a href="#works">กลับไปดูผลงาน</a>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

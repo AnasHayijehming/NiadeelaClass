@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>เกมฝึกคูณ 2-12 | ห้องเรียนครูนิอาดีลา</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../app.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <nav class="app-topbar" aria-label="นำทาง">
+        <a class="back-link" href="../../index.html#works">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          กลับไปหน้า Gallery
+        </a>
+        <p class="app-label">Static Math App / ป.3-6</p>
+      </nav>
+
+      <section class="game-card" aria-labelledby="game-title">
+        <header class="game-header">
+          <div>
+            <h1 id="game-title">เกมฝึกคูณ 2-12</h1>
+            <p>ตอบให้ไว สะสมคะแนน และฝึกตารางคูณให้คล่อง</p>
+          </div>
+          <div class="score-row" aria-label="คะแนนและเวลา">
+            <div class="score-pill">
+              <strong id="score">0</strong>
+              <span>คะแนน</span>
+            </div>
+            <div class="score-pill">
+              <strong id="timer">60</strong>
+              <span>วินาที</span>
+            </div>
+            <div class="score-pill">
+              <strong id="round">1/12</strong>
+              <span>ชุดที่</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="game-stage">
+          <section class="question-panel" aria-live="polite">
+            <p class="question-kicker">ตารางคูณ</p>
+            <h2 class="question" id="question">7 x 8 = ?</h2>
+            <div class="answers" id="answers"></div>
+            <p class="feedback" id="feedback">เลือกคำตอบก่อนเวลาหมด</p>
+          </section>
+
+          <aside class="side-panel" aria-label="คำอธิบายเกม">
+            <div class="side-box">
+              <h2>วิธีเล่น</h2>
+              <p>
+                มีเวลา 60 วินาที ตอบถูกได้คะแนนพื้นฐานและโบนัสจากเวลาที่เหลือ
+              </p>
+            </div>
+            <div class="side-box">
+              <h2>ความคืบหน้า</h2>
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-bar" id="progress"></div>
+              </div>
+              <p id="progress-text">เริ่มชุดที่ 1 จาก 12</p>
+            </div>
+            <div class="side-box">
+              <h2>ชุดแม่สูตรคูณ</h2>
+              <p>สุ่มโจทย์ตั้งแต่แม่ 2 ถึง 12 เพื่อฝึกความจำและความเร็ว</p>
+              <div class="mini-visual" aria-hidden="true">
+                <span style="--tile: 1">2</span>
+                <span style="--tile: 2">5</span>
+                <span style="--tile: 3">9</span>
+                <span style="--tile: 4">12</span>
+              </div>
+            </div>
+            <button class="secondary-action" type="button" id="restart">
+              <i class="fa-solid fa-rotate-right" aria-hidden="true"></i>
+              เริ่มใหม่
+            </button>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <script src="multiplication.js"></script>
+  </body>
+</html>
