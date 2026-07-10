@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Implementation Notes — Math Skate Race Adventure</title>
+    <style>
+      body { max-width: 880px; margin: 40px auto; padding: 0 24px; color: #172033; font: 16px/1.7 "Noto Sans Thai", sans-serif; }
+      h1, h2 { line-height: 1.25; }
+      section { margin: 24px 0; padding: 20px; border: 1px solid #dbe3ef; border-radius: 14px; }
+      .status { color: #8a5a00; font-weight: 700; }
+      code { padding: 2px 6px; border-radius: 5px; background: #eef2f7; }
+    </style>
+  </head>
+  <body>
+    <h1>บันทึกการเพิ่มเกม Math Skate Race Adventure</h1>
+    <p class="status">สถานะ: ดำเนินการและตรวจสอบเสร็จแล้ว</p>
+    <section>
+      <h2>ขอบเขตจากคำขอ</h2>
+      <p>นำเกมจากโฟลเดอร์ต้นทางเข้าคลังสื่อ NiadeelaClass เชื่อมจากหน้าแกลเลอรี ตรวจสอบการใช้งาน แล้ว commit และ push</p>
+    </section>
+    <section>
+      <h2>หลักฐานและการตัดสินใจระหว่างทำ</h2>
+      <ul>
+        <li>ต้นทางเป็น React/vinext แต่ปลายทางเป็น static portfolio จึงต้องจัดแพ็กเป็น static client bundle ที่เปิดจากโฟลเดอร์ย่อยได้</li>
+        <li>แยกขอบเขตจากงาน <code>neon-math-racer</code> ที่มีอยู่แล้ว โดยไม่แก้ไฟล์ของเกมดังกล่าว</li>
+        <li>เกมรองรับระดับ ป.1-4 จึงจัดให้อยู่ในตัวกรอง ป.1-2 และ ป.3-4</li>
+        <li>เปลี่ยน asset URL ของเกมจาก root-relative เป็น relative เพื่อให้ deploy ใต้ <code>apps/math-skate-race/</code> ได้โดยไม่ต้องมี server rewrite</li>
+        <li>นำเข้าเฉพาะ static client bundle และภาพที่เกมใช้ ไม่รวม worker, ฐานข้อมูล, source repository หรือ <code>node_modules</code></li>
+      </ul>
+    </section>
+    <section>
+      <h2>การตรวจสอบ</h2>
+      <ul>
+        <li>Production client build ผ่านด้วย Vite 8.0.13</li>
+        <li>เปิดจากหน้า gallery และ route เกมผ่าน HTTP static server ได้</li>
+        <li>Playwright ยืนยัน flow: เริ่มเล่น → เลือก ป.1 → เลือกนักแข่ง/ด่าน → ตอบถูก → คะแนน 100 และ COMBO 1</li>
+        <li>ตรวจภาพ desktop 1440 × 1024 และ mobile 390 × 844 แล้วไม่พบข้อความหรือปุ่มซ้อนกัน</li>
+        <li>Regression pass ครบ filter ทั้ง 4 สถานะ และเปิด app route ครบทั้ง 6 การ์ดผ่าน browser</li>
+        <li>ESLint ของโปรเจกต์ต้นทางผ่าน ส่วน <code>npm test</code> build ผ่านแต่ test 2 รายการล้มเหลว เพราะยังตรวจหน้า starter skeleton ที่ถูกแทนด้วยเกมแล้ว ไม่ใช่ข้อผิดพลาดของ static bundle ที่นำเข้า</li>
+        <li>พบเพียง <code>/favicon.ico</code> 404 เดิมของหน้า portfolio ไม่กระทบเกม</li>
+      </ul>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>สรุปการเพิ่มเกมสเก็ตซิ่งพิชิตคณิต</title>
+    <style>
+      body { max-width: 900px; margin: 40px auto; padding: 0 24px; color: #173028; background: #fbfaf4; font: 16px/1.75 "Noto Sans Thai", sans-serif; }
+      h1, h2 { color: #174f39; line-height: 1.25; }
+      .hero, section { margin: 22px 0; padding: 24px; border: 1px solid #d9e3d8; border-radius: 16px; background: #fff; }
+      .hero { border-left: 8px solid #dc7b2d; }
+      .passed { color: #17653b; font-weight: 800; }
+      code { padding: 2px 6px; border-radius: 5px; background: #edf3ee; }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <p class="passed">ส่งมอบแล้ว</p>
+      <h1>เพิ่มเกม “สเก็ตซิ่งพิชิตคณิต” เข้าคลังสื่อ</h1>
+      <p>นักเรียน ป.1-4 สามารถเปิดเกมจากหน้าแฟ้มผลงาน เลือกระดับชั้น นักแข่ง และสนาม แล้วฝึกคณิตศาสตร์ผ่านการแข่งขันได้ทันที</p>
+    </div>
+    <section>
+      <h2>สิ่งที่เปลี่ยน</h2>
+      <ul>
+        <li>เพิ่มการ์ดเกมพร้อมภาพตัวอย่างและตัวกรองระดับ ป.1-4</li>
+        <li>เพิ่มเกมแบบ static ที่ <code>apps/math-skate-race/index.html</code></li>
+        <li>คงระบบคะแนน คอมโบ ชีวิต ตัวละคร 8 แบบ สนาม 4 แบบ สถิติ และกระดานผู้นำบนอุปกรณ์</li>
+      </ul>
+    </section>
+    <section>
+      <h2>ผลกระทบและการตัดสินใจ</h2>
+      <p>เกมต้นทางใช้เทคโนโลยีที่ต้องมี server แต่เว็บไซต์ครูเป็น static portfolio จึงแปลงเฉพาะส่วนที่ผู้เรียนใช้งานเป็น static client bundle ทำให้เปิดจากโฮสติ้งเดิมได้โดยไม่เพิ่มระบบหลังบ้านหรือภาระดูแล server</p>
+    </section>
+    <section>
+      <h2>ผลตรวจรับ</h2>
+      <ul>
+        <li>เปิดจากหน้าแกลเลอรีและโหลดภาพเกมครบ</li>
+        <li>ทดสอบการเลือกระดับ ป.1 นักแข่ง สนาม และตอบโจทย์ถูกจนคะแนน/คอมโบเพิ่ม</li>
+        <li>ตรวจหน้าจอ desktop 1440 × 1024 และมือถือ 390 × 844 แล้วใช้งานได้</li>
+        <li>ตรวจตัวกรองทุกระดับชั้นและเปิดเกมเดิมทุกการ์ดเพื่อป้องกันผลกระทบย้อนหลัง</li>
+        <li>ไม่พบข้อขัดข้องของเกม มีเพียง favicon 404 เดิมของเว็บไซต์ซึ่งไม่กระทบการเรียน</li>
+      </ul>
+    </section>
+    <section>
+      <h2>ข้อเสนอแนะถัดไป</h2>
+      <p>ควรให้ครูทดลองโจทย์แต่ละระดับชั้นกับนักเรียนกลุ่มเล็ก เพื่อปรับระดับความยาก เวลาอธิบาย และคำศัพท์ให้เหมาะกับชั้นเรียนจริง</p>
+    </section>
+  </body>
+</html>

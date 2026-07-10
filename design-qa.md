@@ -67,3 +67,14 @@ final result: passed
 - ตรวจการเริ่มเกม การเปลี่ยนเลนทีละหนึ่งเลน การพัก/เล่นต่อ และ asset request
 - ตรวจ desktop และ mobile 390 × 844 พร้อมบันทึก screenshot รอบล่าสุด
 - Worker และ `.openai/hosting.json` ไม่ถูกนำเข้า เพราะ NiadeelaClass เป็น static portfolio
+
+# สเก็ตซิ่งพิชิตคณิต — 10 กรกฎาคม 2569
+
+- Route: `apps/math-skate-race/index.html`
+- Source: React/vinext จาก `C:\Users\anash\Documents\Codex\2026-07-10\static-correct-wrong-boost-jump-memory\site`
+- Desktop 1440 × 1024: เปิดเกมจากการ์ด เลือก ป.1 เปลี่ยนนักแข่ง/ด่าน เริ่มแข่ง และตอบถูกจนคะแนนเพิ่มเป็น 100 กับ COMBO 1 ได้
+- Mobile 390 × 844: หน้าแข่งขันจัดสนาม โจทย์ และตัวเลือกสองคอลัมน์โดยไม่พบ horizontal overflow ที่สังเกตได้
+- Regression: ตรวจ filter ทั้งหมด, ป.1-2, ป.3-4 และ ป.5-6; การ์ดใหม่แสดงในสองกลุ่มแรกและซ่อนใน ป.5-6 ตาม `data-levels="lower middle"`
+- App routes: เปิดครบทั้ง 6 การ์ดผ่าน browser และทุก route แสดง title/หน้าเริ่มต้นได้
+- Console: asset ของเกมโหลดครบ; พบเฉพาะ `/favicon.ico` 404 เดิมจากหน้า portfolio
+- หลักฐาน: `qa-screenshots/math-skate-race-desktop.png`, `qa-screenshots/math-skate-race-mobile.png`, `qa-screenshots/math-skate-race-gallery-mobile.png`
