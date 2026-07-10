@@ -53,3 +53,10 @@
 - [P3] Add more project cards when real classroom web apps are available.
 
 final result: passed
+# ซิ่งคูณสนั่น — 10 กรกฎาคม 2569
+
+- Route: `apps/neon-math-racer/index.html`
+- Desktop: เปิดจากการ์ดหน้าแกลเลอรี โหลดภาพ/ฟอนต์ครบ และเริ่มเกมถึงคำถามข้อแรกได้
+- Mobile 390 × 844: หน้าโรงรถยังใช้งานได้และไม่มี horizontal overflow ที่สังเกตได้
+- Console: asset ของเกมไม่มี 404; พบเฉพาะ `/favicon.ico` 404 ซึ่งเป็นพฤติกรรมเดิมของเว็บไซต์
+- หลักฐาน: `qa-screenshots/neon-math-racer-desktop.png`, `qa-screenshots/neon-math-racer-gameplay.png`, `qa-screenshots/neon-math-racer-mobile.png`

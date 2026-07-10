@@ -1,0 +1,14 @@
+<!doctype html>
+<html lang="th">
+  <head><meta charset="utf-8"><title>Implementation Notes — ซิ่งคูณสนั่น</title></head>
+  <body>
+    <h1>บันทึกการเพิ่มเกมซิ่งคูณสนั่น</h1>
+    <p>วันที่ 10 กรกฎาคม 2569</p>
+    <ul>
+      <li>เลือกเผยแพร่ไฟล์ production build จากต้นทาง แทนการนำ source และ node_modules เข้ามา เพื่อให้เข้ากับเว็บ static เดิม</li>
+      <li>กำหนด route เป็น <code>apps/neon-math-racer/index.html</code> และแก้ asset URL จาก root-relative เป็น route-relative เพื่อรองรับ GitHub Pages</li>
+      <li>จัดเกมอยู่ในระดับ ป.3-6 ตามเนื้อหาสูตรคูณ และใช้ภาพโรงรถจากเกมเป็นภาพหน้าปกในแกลเลอรี</li>
+      <li>เก็บ <code>reference-design.png</code> ไว้ในตัวเกมตาม build ต้นทาง แม้ runtime ไม่จำเป็น เพื่อรักษา artifact ที่ส่งมาครบถ้วน</li>
+    </ul>
+  </body>
+</html>
