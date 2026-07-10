@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Implementation Notes — Long Division Adventure</title>
+    <style>
+      body { max-width: 880px; margin: 40px auto; padding: 0 24px; color: #172033; font: 16px/1.7 "Noto Sans Thai", sans-serif; }
+      h1, h2 { line-height: 1.25; }
+      section { margin: 24px 0; padding: 20px; border: 1px solid #dbe3ef; border-radius: 14px; }
+      .status { color: #8a5a00; font-weight: 700; }
+      code { padding: 2px 6px; border-radius: 5px; background: #eef2f7; }
+    </style>
+  </head>
+  <body>
+    <h1>บันทึกการเพิ่มเกม Long Division Adventure</h1>
+    <p class="status">สถานะ: ดำเนินการและตรวจสอบเสร็จแล้ว</p>
+    <section>
+      <h2>ขอบเขตจากคำขอ</h2>
+      <p>นำเกมจากโฟลเดอร์ต้นทางเข้าคลังสื่อ NiadeelaClass เชื่อมจากหน้าแกลเลอรี ตรวจสอบการใช้งาน แล้ว commit และ push</p>
+    </section>
+    <section>
+      <h2>หลักฐานและการตัดสินใจระหว่างทำ</h2>
+      <ul>
+        <li>ต้นทางเป็น HTML ไฟล์เดียว จึงคัดลอกเข้า <code>apps/long-division-adventure/index.html</code> โดยตรง และตรวจ SHA-256 ตรงกับต้นฉบับ</li>
+        <li>เกมระบุผู้เรียน ป.4 จึงจัดการ์ดในตัวกรอง ป.3-4 เท่านั้น</li>
+        <li>สร้าง thumbnail จากหน้าเริ่มต้นของเกมจริงแล้ว โดยไม่ใช้ภาพ placeholder</li>
+        <li>โหมด AR Hand ต้องใช้ HTTPS/localhost, สิทธิ์กล้อง และ MediaPipe CDN; โหมดอื่นไม่ต้องใช้กล้อง</li>
+      </ul>
+    </section>
+    <section>
+      <h2>การตรวจสอบ</h2>
+      <ul>
+        <li>หน้าเกมและไฟล์ static ตอบ HTTP 200</li>
+        <li>Playwright ยืนยัน flow: เริ่มการผจญภัย → ฝึกฝน → ตอบ <code>3 ÷ 2 = 1</code> → คะแนนเพิ่มเป็น 10 → โจทย์เดินต่อ</li>
+        <li>ตรวจ desktop 1440 × 1024 และ mobile 390 × 844 แล้วไม่พบข้อความหรือปุ่มซ้อนกัน</li>
+        <li>Regression pass ครบ filter ทั้ง 4 สถานะ และเปิด app route ครบทั้ง 7 การ์ด</li>
+        <li>ไม่พบ console error ของเกม; พบเฉพาะ <code>/favicon.ico</code> 404 เดิมของ portfolio</li>
+        <li>ไม่ได้อนุญาตสิทธิ์กล้องระหว่าง QA จึงยังไม่ได้ตรวจ gesture จริงของ AR Hand บนอุปกรณ์จริง</li>
+      </ul>
+    </section>
+  </body>
+</html>

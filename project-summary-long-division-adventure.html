@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>สรุปการเพิ่มเกมการหารยาว ป.4</title>
+    <style>
+      body { max-width: 900px; margin: 40px auto; padding: 0 24px; color: #172554; background: #eff8ff; font: 16px/1.75 "Noto Sans Thai", sans-serif; }
+      h1, h2 { color: #1d4ed8; line-height: 1.25; }
+      .hero, section { margin: 22px 0; padding: 24px; border: 1px solid #dbeafe; border-radius: 16px; background: #fff; }
+      .hero { border-left: 8px solid #ec4899; }
+      .passed { color: #15803d; font-weight: 800; }
+      code { padding: 2px 6px; border-radius: 5px; background: #eff6ff; }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <p class="passed">ส่งมอบแล้ว</p>
+      <h1>เพิ่มเกม “การหารยาว ป.4” เข้าคลังสื่อ</h1>
+      <p>นักเรียนสามารถเรียนรู้การหารแนวตั้งทีละขั้น พร้อมคะแนน หัวใจ คำแนะนำ และโหมดการเล่นหลายรูปแบบได้จากหน้าแฟ้มผลงานของครู</p>
+    </div>
+    <section>
+      <h2>สิ่งที่เพิ่ม</h2>
+      <ul>
+        <li>เพิ่มการ์ดเกมในตัวกรอง ป.3-4 พร้อมภาพจากหน้าเกมจริง</li>
+        <li>เพิ่มเกมแบบ single-file static ที่ <code>apps/long-division-adventure/index.html</code></li>
+        <li>คงโหมดฝึกฝน จับเวลา ผจญภัย AR Hand ธีมสว่าง/มืด และสถิติในอุปกรณ์</li>
+      </ul>
+    </section>
+    <section>
+      <h2>ผลตรวจรับ</h2>
+      <ul>
+        <li>เปิดเกมจากแกลเลอรีและเริ่มโหมดฝึกฝนได้</li>
+        <li>ตอบขั้นแรกถูกแล้วคะแนนและกระบวนการหารอัปเดตต่อเนื่อง</li>
+        <li>ตรวจ desktop 1440 × 1024 และมือถือ 390 × 844 แล้วใช้งานได้</li>
+        <li>ตรวจตัวกรองทุกระดับชั้นและเปิดเกมครบทั้ง 7 การ์ด</li>
+      </ul>
+    </section>
+    <section>
+      <h2>ข้อควรรู้</h2>
+      <p>โหมด AR Hand ต้องเปิดผ่าน HTTPS หรือ localhost ใช้อินเทอร์เน็ตโหลด MediaPipe และต้องได้รับสิทธิ์กล้องจากผู้ใช้ การตรวจรอบนี้ครอบคลุมเกมปกติ แต่ยังไม่ได้ทดลอง gesture ด้วยกล้องจริง</p>
+    </section>
+    <section>
+      <h2>ข้อเสนอแนะถัดไป</h2>
+      <p>ควรทดลอง AR Hand บนอุปกรณ์และสภาพแสงในห้องเรียนจริงก่อนใช้กับนักเรียนทั้งชั้น หากจับท่าทางไม่เสถียรยังสามารถใช้โหมดฝึกฝน จับเวลา และผจญภัยได้ตามปกติ</p>
+    </section>
+  </body>
+</html>

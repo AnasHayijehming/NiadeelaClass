@@ -78,3 +78,16 @@ final result: passed
 - App routes: เปิดครบทั้ง 6 การ์ดผ่าน browser และทุก route แสดง title/หน้าเริ่มต้นได้
 - Console: asset ของเกมโหลดครบ; พบเฉพาะ `/favicon.ico` 404 เดิมจากหน้า portfolio
 - หลักฐาน: `qa-screenshots/math-skate-race-desktop.png`, `qa-screenshots/math-skate-race-mobile.png`, `qa-screenshots/math-skate-race-gallery-mobile.png`
+
+# เกมการหารยาว ป.4 — 10 กรกฎาคม 2569
+
+- Route: `apps/long-division-adventure/index.html`
+- Source: single-file HTML จาก `C:\Users\anash\Documents\Codex\2026-07-10\web-application-single-file-html-production\index.html`; SHA-256 ตรงกับไฟล์ที่นำเข้า
+- Desktop 1440 × 1024: หน้าเริ่มต้นอ่านง่ายและไม่มี horizontal overflow ที่สังเกตได้
+- Mobile 390 × 844: โหมดฝึกฝนแสดงโจทย์หารยาว แป้นตัวเลข และ HUD ครบโดยไม่พบข้อความหรือปุ่มซ้อนกัน
+- Interaction: เริ่มการผจญภัย → เลือกฝึกฝน → ตอบขั้นแรก `3 ÷ 2 = 1`; คะแนนเพิ่มเป็น 10 และเกมเดินต่อไปที่ `19 ÷ 2`
+- Regression: ตรวจ filter ทั้งหมด, ป.1-2, ป.3-4 และ ป.5-6; การ์ดใหม่แสดงเฉพาะ ป.3-4 ตาม `data-levels="middle"`
+- App routes: เปิดครบทั้ง 7 การ์ดผ่าน browser และทุก route แสดง title/หน้าเริ่มต้นได้
+- Console: ไม่พบ error ของเกม; พบเฉพาะ `/favicon.ico` 404 เดิมของ portfolio
+- AR Hand: ไม่เปิดกล้องระหว่าง QA; โหมดนี้ยังต้อง HTTPS/localhost, สิทธิ์กล้อง และ MediaPipe CDN ตามข้อกำหนดต้นทาง
+- หลักฐาน: `qa-screenshots/long-division-adventure-desktop.png`, `qa-screenshots/long-division-adventure-mobile.png`, `qa-screenshots/long-division-adventure-gallery.png`
