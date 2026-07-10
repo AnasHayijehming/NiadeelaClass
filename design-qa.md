@@ -60,3 +60,10 @@ final result: passed
 - Mobile 390 × 844: หน้าโรงรถยังใช้งานได้และไม่มี horizontal overflow ที่สังเกตได้
 - Console: asset ของเกมไม่มี 404; พบเฉพาะ `/favicon.ico` 404 ซึ่งเป็นพฤติกรรมเดิมของเว็บไซต์
 - หลักฐาน: `qa-screenshots/neon-math-racer-desktop.png`, `qa-screenshots/neon-math-racer-gameplay.png`, `qa-screenshots/neon-math-racer-mobile.png`
+# ซิ่งคูณสนั่น — อัปเดตรอบที่ 2 (10 กรกฎาคม 2569)
+
+- Source artifact: `dist/client` จากโปรเจกต์ต้นทาง
+- ตรวจรายการนักแข่งครบ 6 ตัว รวมสุนัขจรวดและเพนกวินเจ็ต
+- ตรวจการเริ่มเกม การเปลี่ยนเลนทีละหนึ่งเลน การพัก/เล่นต่อ และ asset request
+- ตรวจ desktop และ mobile 390 × 844 พร้อมบันทึก screenshot รอบล่าสุด
+- Worker และ `.openai/hosting.json` ไม่ถูกนำเข้า เพราะ NiadeelaClass เป็น static portfolio

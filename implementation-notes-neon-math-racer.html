@@ -10,5 +10,13 @@
       <li>จัดเกมอยู่ในระดับ ป.3-6 ตามเนื้อหาสูตรคูณ และใช้ภาพโรงรถจากเกมเป็นภาพหน้าปกในแกลเลอรี</li>
       <li>เก็บ <code>reference-design.png</code> ไว้ในตัวเกมตาม build ต้นทาง แม้ runtime ไม่จำเป็น เพื่อรักษา artifact ที่ส่งมาครบถ้วน</li>
     </ul>
+    <h2>อัปเดตรอบที่ 2 — 10 กรกฎาคม 2569</h2>
+    <ul>
+      <li>ต้นทางเปลี่ยน production package เป็น <code>dist/client</code> พร้อม Worker สำหรับระบบ Sites; เลือกนำเข้าเฉพาะ client artifact เพราะ repository นี้เผยแพร่เป็น static site และไม่ต้องใช้ Worker</li>
+      <li>แทนที่ build เดิมทั้งหมดเพื่อไม่ให้ไฟล์ hash เก่าหรือ PNG ที่เลิกใช้ค้างอยู่ และแก้ root-relative asset URL เป็น route-relative เช่นเดิม</li>
+      <li>อัปเดต roster เป็น 6 ตัว เพิ่มสุนัขจรวดและเพนกวินเจ็ต พร้อมการควบคุมหนึ่งคำสั่งต่อหนึ่งเลนและ soundscape ใหม่</li>
+      <li>ใช้ WebP ที่ต้นทางปรับขนาดแล้ว ลด payload รูปตัวละครอย่างมาก โดยยังเก็บภาพฉาก PNG ที่เกมต้องใช้</li>
+      <li>อัปเดตภาพปกหน้าแกลเลอรีจาก <code>garage-hero.png</code> รุ่นล่าสุด</li>
+    </ul>
   </body>
 </html>
