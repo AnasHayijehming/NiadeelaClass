@@ -114,3 +114,16 @@ final result: passed
 - App routes: ทั้ง 8 เส้นทางตอบ HTTP 200
 - Console: พบเฉพาะ `/favicon.ico` 404 เดิมของ portfolio
 - หลักฐาน: `qa-screenshots/latest-games-gallery-desktop.png`, `qa-screenshots/latest-games-gallery-mobile.png`
+
+# ผจญภัยลูกโป่งคณิตศาสตร์ AR — 14 กรกฎาคม 2569
+
+- Route: `apps/ar-math-adventure/index.html`
+- Source: vinext/React build จาก `C:\Users\anash\Documents\Codex\2026-07-13\act-as-an-expert-frontend-developer-2\outputs\ar-math-game`; สร้าง static entry จาก HTML ที่ worker render และแก้ asset path/runtime preload สำหรับ subfolder
+- Source validation: build ผ่านและ ESLint ผ่าน; ชุด `npm test` เดิมไม่ผ่านเพราะใช้ environment syntax แบบ Unix บน Windows และยังตรวจ starter skeleton ที่ไม่มีแล้ว
+- Desktop 1440 × 900: หน้าเริ่มและฉากเล่นโหลดครบ ไม่มี console error ของเกม
+- Mobile 390 × 844: เกม hydrate สำเร็จและมี `scrollWidth = innerWidth = 390`
+- Interaction: เริ่มแบบเมาส์/สัมผัส → ตอบ `12 × 6 = 72`; คะแนนเพิ่มจาก 0 เป็น 100 และเกมไปข้อ 2
+- Regression: การ์ดใหม่ซ่อนใน ป.1–2 และแสดงใน ป.3–4, ป.5–6 และผลงานทั้งหมด; app routes ทั้ง 9 หน้าได้ HTTP 200
+- Dependency fallback: จำลอง Google Fonts และ MediaPipe ตอบ HTTP 503; ปุ่มเริ่มยังพร้อม เกมเปิดถึงโจทย์ข้อแรก และไม่มี horizontal overflow
+- Console: session เกมปกติไม่มี error; หน้า portfolio พบเฉพาะ `/favicon.ico` 404 เดิม
+- หลักฐาน: `qa-screenshots/ar-math-adventure-desktop.png`, `qa-screenshots/ar-math-adventure-gameplay.png`, `qa-screenshots/ar-math-adventure-mobile.png`, `qa-screenshots/ar-math-adventure-gallery.png`, `qa-screenshots/ar-math-adventure-gallery-mobile.png`

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>บันทึกการนำเข้าเกม AR Math Adventure</title>
+    <style>
+      :root { color-scheme: light; font-family: "Noto Sans Thai", system-ui, sans-serif; }
+      body { margin: 0; background: #f5f2ff; color: #30284a; line-height: 1.7; }
+      main { max-width: 860px; margin: 40px auto; padding: 32px; background: #fff; border-radius: 24px; box-shadow: 0 16px 48px #6d4bc31f; }
+      h1, h2 { color: #6843b8; } code { background: #eee8ff; padding: 2px 7px; border-radius: 7px; }
+      li + li { margin-top: 8px; } .status { color: #14745a; font-weight: 700; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="status">RUNNING IMPLEMENTATION NOTE · 14 กรกฎาคม 2026</p>
+      <h1>AR Math Adventure — บันทึกการนำเข้า</h1>
+      <h2>ขอบเขต</h2>
+      <ul>
+        <li>นำเกมจากชุดต้นฉบับ <code>outputs/ar-math-game</code> เข้าสู่พอร์ตโฟลิโอแบบสแตติก</li>
+        <li>เพิ่มการ์ดเกมในแกลเลอรีและตรวจเส้นทางผ่านเว็บเซิร์ฟเวอร์จริง</li>
+        <li>ตรวจหน้าเริ่ม เกมเพลย์ และการแสดงผลทั้งเดสก์ท็อปกับมือถือ</li>
+      </ul>
+      <h2>การตัดสินใจที่ไม่มีในคำขอ</h2>
+      <ul>
+        <li><strong>ชื่อเส้นทาง:</strong> ใช้ <code>apps/ar-math-adventure/</code> ให้สั้นและสื่อถึงโหมด AR โดยตรง</li>
+        <li><strong>ระดับชั้น:</strong> จัดเป็น ป.3–6 เพราะมีบวก/ลบเลข 2–3 หลัก และคูณ/หารแม่ 2–12</li>
+        <li><strong>โหมดกล้อง:</strong> คง MediaPipe จาก CDN ตามต้นฉบับ แต่ต้องยืนยันว่าเมาส์/สัมผัสยังเล่นได้เมื่อกล้องหรือ CDN ใช้งานไม่ได้</li>
+      </ul>
+      <h2>ข้อแลกเปลี่ยน</h2>
+      <ul>
+        <li>ต้นฉบับเป็น vinext ที่ต้องเสิร์ฟผ่าน Worker จึงต้องแปลงผล build เป็นหน้า HTML สแตติกและแก้ asset path สำหรับ subfolder</li>
+        <li>ชุดทดสอบเดิมยังตรวจหน้า starter ที่ถูกลบแล้ว จึงไม่ใช่หลักฐานผ่านของตัวเกม; ใช้ build, lint และ browser QA เป็นเกณฑ์หลักแทน</li>
+      </ul>
+      <h2>สถานะ</h2>
+      <p><strong>นำเข้า ตรวจสอบ และพร้อมเผยแพร่</strong></p>
+      <ul>
+        <li>แก้ runtime preload ของ vinext ไม่ให้เติม <code>/</code> หน้า asset path ซึ่งเดิมทำให้ไฟล์ JavaScript 4 รายการตอบ 404 เมื่อวางใต้ subfolder</li>
+        <li>ตัดไฟล์ build ที่ไม่ได้ใช้งาน ได้แก่ manifest ภายใน ไฟล์ตัวอย่าง และ local font bundle ที่ CSS ไม่ได้อ้างถึง</li>
+        <li>ใช้ภาพหน้าเริ่มจริงเป็น thumbnail กลางร่วมกับการ์ดแกลเลอรี เพื่อลด asset ซ้ำซ้อน</li>
+        <li>คง HTML ที่ worker สร้างในรูป minified เพื่อรักษา RSC hydration payload ไม่จัดรูปแบบใหม่ด้วย formatter</li>
+      </ul>
+      <h2>ผลตรวจสอบ</h2>
+      <ul>
+        <li>source build ผ่าน และ ESLint ผ่าน; <code>npm test</code> ของต้นฉบับไม่ผ่านเพราะ script ใช้ syntax ตั้ง environment variable แบบ Unix บน Windows และ test ยังอ้าง starter skeleton ที่ไม่มีแล้ว</li>
+        <li>เกม hydrate สำเร็จ ไม่มี console error ใน session ปกติ และ asset ภายในโหลดจาก subfolder ครบ</li>
+        <li>เริ่มเกมโดยไม่ใช้กล้อง ตอบ <code>12 × 6 = 72</code> ถูก คะแนนเพิ่มเป็น 100 และไปข้อ 2</li>
+        <li>desktop 1440 × 900 และ mobile 390 × 844 แสดงผลครบ โดย mobile มี <code>scrollWidth = innerWidth = 390</code></li>
+        <li>เมื่อจำลอง Google Fonts และ MediaPipe ตอบ 503 เกมยัง hydrate และเริ่มเล่นด้วยเมาส์/สัมผัสได้</li>
+        <li>ตัวกรองซ่อนเกมใน ป.1–2 และแสดงใน ป.3–4 กับ ป.5–6 ตามระดับที่กำหนด; เส้นทางเกมทั้งหมด 9 หน้าได้ HTTP 200</li>
+      </ul>
+    </main>
+  </body>
+</html>
