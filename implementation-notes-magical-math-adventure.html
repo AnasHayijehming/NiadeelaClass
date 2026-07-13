@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Implementation Notes — Magical Math Adventure</title>
+    <style>
+      body { max-width: 880px; margin: 40px auto; padding: 0 24px; color: #172033; font: 16px/1.7 "Noto Sans Thai", sans-serif; }
+      h1, h2 { line-height: 1.25; }
+      section { margin: 24px 0; padding: 20px; border: 1px solid #dbe3ef; border-radius: 14px; }
+      .status { color: #8a5a00; font-weight: 700; }
+      code { padding: 2px 6px; border-radius: 5px; background: #eef2f7; }
+    </style>
+  </head>
+  <body>
+    <h1>บันทึกการเพิ่มเกมผจญภัยดินแดนเวทมนตร์คณิตศาสตร์</h1>
+    <p class="status">สถานะ: ดำเนินการและตรวจสอบเสร็จแล้ว</p>
+    <section>
+      <h2>ขอบเขตจากคำขอ</h2>
+      <p>นำเกมจากโฟลเดอร์ต้นทางเข้าคลังสื่อ NiadeelaClass เชื่อมจากหน้าแกลเลอรี ตรวจสอบเส้นทางและการเล่น แล้วจัดทำหลักฐานการทดสอบ</p>
+    </section>
+    <section>
+      <h2>หลักฐานและการตัดสินใจระหว่างทำ</h2>
+      <ul>
+        <li>ต้นทางเป็น vinext/React และ build ที่ <code>dist/client</code> ไม่มี <code>index.html</code> เพราะหน้าเว็บถูก render ผ่าน worker จึงใช้ HTML ที่ worker render จริงเป็น static entry point</li>
+        <li>เลือก route <code>apps/magical-math-adventure/index.html</code> ให้สื่อความหมายตรงกับชื่อและไม่ชนกับเกมเดิม</li>
+        <li>ปรับ asset URL จาก root-relative เป็น route-relative เพื่อให้เกมทำงานใต้โฟลเดอร์ของ static portfolio</li>
+        <li>vinext preload runtime เติมเครื่องหมาย <code>/</code> หน้า asset และ CSS custom property resolve ภาพจากตำแหน่ง stylesheet จึงปรับสองจุดนี้แยกกันหลัง QA พบ 404; ไม่คัดลอกภาพซ้ำเพื่อลดขนาดและรักษา DRY</li>
+        <li>รอบ code review ย้าย OG image ไปใช้ไฟล์กลางเดียวกับ thumbnail, ตัดฟอนต์ build ที่ไม่ถูกอ้างถึง และวาง script ไว้ก่อนปิดเอกสารให้ semantic พร้อม font fallback ตามมาตรฐานรีโป</li>
+        <li>คง generated HTML ส่วนเนื้อหาเกมเป็นรูปแบบ minified เพราะการจัด whitespace แบบ HTML ทั่วไปทำให้ React hydration mismatch; นี่เป็นข้อยกเว้นจากกฎเยื้อง 2 ช่องสำหรับ build artifact เท่านั้น ส่วนไฟล์ที่ดูแลด้วยมือยังใช้รูปแบบของรีโป</li>
+        <li>เกมมีระดับง่าย ปานกลาง ยาก และฝึกบวก ลบ คูณ หาร แต่ระดับเริ่มต้นมีจำนวนถึงหลักร้อยและสูตรคูณ 12 จึงจัดการ์ดไว้ในตัวกรอง ป.3-6; ครูยังลดเป็นระดับง่ายสำหรับผู้เรียนที่อายุน้อยกว่าได้ภายในเกม</li>
+        <li>ใช้ภาพ Open Graph ของเกมจริงเป็น thumbnail แทนภาพ placeholder</li>
+      </ul>
+    </section>
+    <section>
+      <h2>การตรวจสอบ</h2>
+      <ul>
+        <li>ต้นทางผ่าน <code>npm test</code> (2 tests), <code>npm run build</code> และ <code>npm run lint</code></li>
+        <li>Playwright เปิดเกมจากหน้าแกลเลอรี เติมชื่อ เริ่มด่าน 1 และตอบ <code>68 + 103 = 171</code>; คะแนนเพิ่มเป็น 136 เหรียญเป็น 70 คอมโบเป็น 1 และเกมไปข้อ 2</li>
+        <li>เกมที่ desktop 1440 × 1024 และ mobile 390 × 844 โหลด asset ครบและไม่มี console error; mobile มี <code>scrollWidth = innerWidth = 390</code></li>
+        <li>จำลอง Google Fonts ตอบ HTTP 503 แล้วหน้า mobile ยัง hydrate สำเร็จ เริ่มเกมได้ และไม่มี horizontal overflow จึงยืนยัน font fallback ตามมาตรฐานรีโป</li>
+        <li>ตัวกรองยืนยันว่าการ์ดใหม่ซ่อนใน ป.1-2 และแสดงใน ป.3-4, ป.5-6 และผลงานทั้งหมด</li>
+        <li>หน้าเกมทั้ง 8 route ตอบ HTTP 200; หน้าแกลเลอรีมีเพียง <code>/favicon.ico</code> 404 เดิมที่ไม่กระทบเกม</li>
+        <li>หลักฐานภาพอยู่ที่ <code>qa-screenshots/magical-math-adventure-*.png</code></li>
+      </ul>
+    </section>
+  </body>
+</html>

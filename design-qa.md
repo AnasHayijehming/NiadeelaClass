@@ -91,3 +91,16 @@ final result: passed
 - Console: ไม่พบ error ของเกม; พบเฉพาะ `/favicon.ico` 404 เดิมของ portfolio
 - AR Hand: ไม่เปิดกล้องระหว่าง QA; โหมดนี้ยังต้อง HTTPS/localhost, สิทธิ์กล้อง และ MediaPipe CDN ตามข้อกำหนดต้นทาง
 - หลักฐาน: `qa-screenshots/long-division-adventure-desktop.png`, `qa-screenshots/long-division-adventure-mobile.png`, `qa-screenshots/long-division-adventure-gallery.png`
+
+# ผจญภัยดินแดนเวทมนตร์คณิตศาสตร์ — 13 กรกฎาคม 2569
+
+- Route: `apps/magical-math-adventure/index.html`
+- Source: vinext/React build จาก `C:\Users\anash\Documents\Codex\2026-07-13\task-create-a-educational-web-static`; สร้าง static entry จาก HTML ที่ worker render และแปลง asset path ให้รองรับ subfolder
+- Source validation: `npm test` ผ่าน 2 tests, `npm run build` ผ่าน และ `npm run lint` ผ่าน
+- Desktop 1440 × 1024: หน้าเริ่มต้นและฉากเล่นโหลดภาพครบ ไม่มี console error ของเกม
+- Mobile 390 × 844: ฉากเล่นมี `scrollWidth = innerWidth = 390` และ `scrollHeight = innerHeight = 844`
+- Interaction: กรอกชื่อ → เริ่มด่านป่าแห่งการบวก → ตอบ `68 + 103 = 171`; คะแนนเพิ่มเป็น 136 เหรียญเป็น 70 คอมโบเป็น 1 และเกมไปข้อ 2
+- Regression: การ์ดใหม่ซ่อนใน ป.1-2 และแสดงใน ป.3-4, ป.5-6 และผลงานทั้งหมด; app routes ทั้ง 8 หน้าได้ HTTP 200
+- Console: เกมไม่มี error; หน้า portfolio ยังมีเฉพาะ `/favicon.ico` 404 เดิม
+- Font fallback: จำลอง `fonts.googleapis.com` และ `fonts.gstatic.com` ตอบ HTTP 503; หน้า mobile ยัง hydrate สำเร็จ เริ่มเกมถึงโจทย์ข้อแรกได้ และไม่มี horizontal overflow
+- หลักฐาน: `qa-screenshots/magical-math-adventure-desktop.png`, `qa-screenshots/magical-math-adventure-gameplay.png`, `qa-screenshots/magical-math-adventure-mobile.png`, `qa-screenshots/magical-math-adventure-gallery.png`, `qa-screenshots/magical-math-adventure-gallery-mobile.png`
