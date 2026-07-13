@@ -123,6 +123,8 @@ final result: passed
 - Desktop 1440 × 900: หน้าเริ่มและฉากเล่นโหลดครบ ไม่มี console error ของเกม
 - Mobile 390 × 844: เกม hydrate สำเร็จและมี `scrollWidth = innerWidth = 390`
 - Interaction: เริ่มแบบเมาส์/สัมผัส → ตอบ `12 × 6 = 72`; คะแนนเพิ่มจาก 0 เป็น 100 และเกมไปข้อ 2
+- Keyboard accessibility: ปุ่มคำตอบทั้ง 4 ค่าอยู่ใน accessibility tree; โฟกัสคำตอบ `50` แล้วกด Enter ทำให้คะแนนเพิ่มเป็น 100 และไปข้อ 2
+- Typography: ปรับเกมให้ใช้ `Noto Sans Thai` ตามมาตรฐานของ repository และตรวจภาพใหม่ทั้ง desktop/mobile
 - Regression: การ์ดใหม่ซ่อนใน ป.1–2 และแสดงใน ป.3–4, ป.5–6 และผลงานทั้งหมด; app routes ทั้ง 9 หน้าได้ HTTP 200
 - Dependency fallback: จำลอง Google Fonts และ MediaPipe ตอบ HTTP 503; ปุ่มเริ่มยังพร้อม เกมเปิดถึงโจทย์ข้อแรก และไม่มี horizontal overflow
 - Console: session เกมปกติไม่มี error; หน้า portfolio พบเฉพาะ `/favicon.ico` 404 เดิม

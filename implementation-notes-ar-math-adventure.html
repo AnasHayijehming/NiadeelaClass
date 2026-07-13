@@ -37,6 +37,7 @@
       <p><strong>นำเข้า ตรวจสอบ และพร้อมเผยแพร่</strong></p>
       <ul>
         <li>แก้ runtime preload ของ vinext ไม่ให้เติม <code>/</code> หน้า asset path ซึ่งเดิมทำให้ไฟล์ JavaScript 4 รายการตอบ 404 เมื่อวางใต้ subfolder</li>
+        <li>ปรับฟอนต์ไทยเป็น <code>Noto Sans Thai</code> ให้ตรงมาตรฐานของพอร์ตโฟลิโอ และเพิ่มปุ่มคำตอบจริง 4 ปุ่มสำหรับผู้ใช้แป้นพิมพ์/โปรแกรมอ่านหน้าจอ</li>
         <li>ตัดไฟล์ build ที่ไม่ได้ใช้งาน ได้แก่ manifest ภายใน ไฟล์ตัวอย่าง และ local font bundle ที่ CSS ไม่ได้อ้างถึง</li>
         <li>ใช้ภาพหน้าเริ่มจริงเป็น thumbnail กลางร่วมกับการ์ดแกลเลอรี เพื่อลด asset ซ้ำซ้อน</li>
         <li>คง HTML ที่ worker สร้างในรูป minified เพื่อรักษา RSC hydration payload ไม่จัดรูปแบบใหม่ด้วย formatter</li>
@@ -46,6 +47,7 @@
         <li>source build ผ่าน และ ESLint ผ่าน; <code>npm test</code> ของต้นฉบับไม่ผ่านเพราะ script ใช้ syntax ตั้ง environment variable แบบ Unix บน Windows และ test ยังอ้าง starter skeleton ที่ไม่มีแล้ว</li>
         <li>เกม hydrate สำเร็จ ไม่มี console error ใน session ปกติ และ asset ภายในโหลดจาก subfolder ครบ</li>
         <li>เริ่มเกมโดยไม่ใช้กล้อง ตอบ <code>12 × 6 = 72</code> ถูก คะแนนเพิ่มเป็น 100 และไปข้อ 2</li>
+        <li>ตรวจแป้นพิมพ์โดยโฟกัสปุ่มคำตอบ <code>50</code> แล้วกด Enter; คะแนนเพิ่มเป็น 100 และเกมไปข้อ 2</li>
         <li>desktop 1440 × 900 และ mobile 390 × 844 แสดงผลครบ โดย mobile มี <code>scrollWidth = innerWidth = 390</code></li>
         <li>เมื่อจำลอง Google Fonts และ MediaPipe ตอบ 503 เกมยัง hydrate และเริ่มเล่นด้วยเมาส์/สัมผัสได้</li>
         <li>ตัวกรองซ่อนเกมใน ป.1–2 และแสดงใน ป.3–4 กับ ป.5–6 ตามระดับที่กำหนด; เส้นทางเกมทั้งหมด 9 หน้าได้ HTTP 200</li>
