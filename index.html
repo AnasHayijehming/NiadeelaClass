@@ -95,8 +95,13 @@
         </div>
 
         <div class="shelf-wrap">
-          <div class="project-grid">
-            <article class="project-card" data-levels="lower" style="--delay: 80ms">
+          <div class="project-grid" id="project-gallery">
+            <article
+              class="project-card"
+              data-added="2026-06-24T18:03:24+07:00"
+              data-levels="lower"
+              style="--delay: 80ms"
+            >
               <a class="project-image-link" href="apps/addition/index.html">
                 <img
                   src="assets/addition-game.png"
@@ -120,7 +125,12 @@
               </div>
             </article>
 
-            <article class="project-card" data-levels="middle" style="--delay: 180ms">
+            <article
+              class="project-card"
+              data-added="2026-06-24T18:03:24+07:00"
+              data-levels="middle"
+              style="--delay: 180ms"
+            >
               <a
                 class="project-image-link"
                 href="apps/math-addition-adventure/index.html"
@@ -149,6 +159,7 @@
 
             <article
               class="project-card"
+              data-added="2026-06-24T18:03:24+07:00"
               data-levels="middle upper"
               style="--delay: 280ms"
             >
@@ -177,6 +188,7 @@
 
             <article
               class="project-card"
+              data-added="2026-06-24T18:03:24+07:00"
               data-levels="middle upper"
               style="--delay: 380ms"
             >
@@ -205,6 +217,7 @@
 
             <article
               class="project-card"
+              data-added="2026-07-10T16:20:33+07:00"
               data-levels="middle upper"
               style="--delay: 480ms"
             >
@@ -233,6 +246,7 @@
 
             <article
               class="project-card"
+              data-added="2026-07-10T21:15:21+07:00"
               data-levels="lower middle"
               style="--delay: 580ms"
             >
@@ -261,6 +275,7 @@
 
             <article
               class="project-card"
+              data-added="2026-07-10T21:29:23+07:00"
               data-levels="middle"
               style="--delay: 680ms"
             >
@@ -292,6 +307,7 @@
 
             <article
               class="project-card"
+              data-added="2026-07-13T19:58:31+07:00"
               data-levels="middle upper"
               style="--delay: 780ms"
             >
@@ -323,6 +339,18 @@
                 </a>
               </div>
             </article>
+          </div>
+          <div class="gallery-actions">
+            <p class="gallery-status" id="gallery-status" aria-live="polite"></p>
+            <button
+              class="expand-button"
+              id="expand-projects"
+              type="button"
+              aria-controls="project-gallery"
+            >
+              ขยายดูเกมเพิ่มเติม
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
           </div>
           <div class="wood-shelf" aria-hidden="true"></div>
         </div>

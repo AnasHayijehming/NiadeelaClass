@@ -104,3 +104,13 @@ final result: passed
 - Console: เกมไม่มี error; หน้า portfolio ยังมีเฉพาะ `/favicon.ico` 404 เดิม
 - Font fallback: จำลอง `fonts.googleapis.com` และ `fonts.gstatic.com` ตอบ HTTP 503; หน้า mobile ยัง hydrate สำเร็จ เริ่มเกมถึงโจทย์ข้อแรกได้ และไม่มี horizontal overflow
 - หลักฐาน: `qa-screenshots/magical-math-adventure-desktop.png`, `qa-screenshots/magical-math-adventure-gameplay.png`, `qa-screenshots/magical-math-adventure-mobile.png`, `qa-screenshots/magical-math-adventure-gallery.png`, `qa-screenshots/magical-math-adventure-gallery-mobile.png`
+
+# แกลเลอรีเกมล่าสุด — 13 กรกฎาคม 2569
+
+- ลำดับเริ่มต้น: แสดง 4 เกมล่าสุดจากเวลาที่เพิ่มใน Git ได้แก่ Magical Math, Long Division, Math Skate และ Neon Math Racer
+- Interaction: กด `ขยายดูเกมเพิ่มเติม` หนึ่งครั้งแล้วเพิ่มจาก 4 เป็น 8 เกม และปุ่มซ่อนเมื่อแสดงครบ
+- Filter regression: ป.1-2 แสดง 2 จาก 2 เกมและไม่มีปุ่มขยาย; เปลี่ยนกลับผลงานทั้งหมดแล้วรีเซ็ตเป็น 4 จาก 8 เกม
+- Desktop 1440 × 1000 และ Mobile 390 × 844: ลำดับ เนื้อหา ปุ่ม และตัวนับอ่านได้ ไม่พบ horizontal overflow หรือองค์ประกอบซ้อนกัน
+- App routes: ทั้ง 8 เส้นทางตอบ HTTP 200
+- Console: พบเฉพาะ `/favicon.ico` 404 เดิมของ portfolio
+- หลักฐาน: `qa-screenshots/latest-games-gallery-desktop.png`, `qa-screenshots/latest-games-gallery-mobile.png`

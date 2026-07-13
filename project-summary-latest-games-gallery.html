@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>สรุปการปรับปรุงคลังเกมล่าสุด</title>
+    <style>
+      body { max-width: 880px; margin: 40px auto; padding: 0 20px; color: #283326; font: 16px/1.75 "Noto Sans Thai", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f7f5ee; }
+      main { padding: 32px; border-radius: 22px; background: #fff; box-shadow: 0 16px 40px #27351f17; }
+      h1, h2 { color: #355f2f; }
+      .result { padding: 18px; border-left: 5px solid #557a45; background: #eef5ea; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p>รายงานสำหรับผู้เกี่ยวข้อง · 13 กรกฎาคม 2569</p>
+      <h1>ปรับคลังเกมให้เห็นผลงานล่าสุดก่อน</h1>
+      <p class="result">ผู้เข้าชมจะเห็นเกมล่าสุด 4 เกมทันที และสามารถกดขยายเพื่อดูเพิ่มครั้งละ 4 เกม ทำให้หน้าแรกกระชับขึ้นโดยยังเข้าถึงเกมทั้งหมดได้</p>
+
+      <h2>สิ่งที่เปลี่ยน</h2>
+      <ul>
+        <li>เรียงเกมจากใหม่ไปเก่าโดยอ้างอิงวันที่เพิ่มผลงานจริง</li>
+        <li>เพิ่มปุ่มขยายและข้อความบอกจำนวนเกมที่กำลังแสดง</li>
+        <li>ปรับตัวกรองระดับชั้นให้แสดงเฉพาะเกมในหมวดและเริ่มที่ไม่เกิน 4 เกม</li>
+      </ul>
+
+      <h2>ผลกระทบและการตรวจสอบ</h2>
+      <p>ตรวจหน้า desktop และ mobile แล้ว ปุ่มและตัวกรองทำงานตามลำดับ ทั้ง 8 เกมยังเปิดเส้นทางได้ตามปกติ ไม่มีปัญหา layout ใหม่ที่พบระหว่างตรวจสอบ</p>
+
+      <h2>ข้อควรรู้</h2>
+      <p>เมื่อเพิ่มเกมใหม่ ผู้ดูแลควรระบุวันที่เพิ่มในข้อมูลการ์ด เพื่อให้ระบบเรียงลำดับล่าสุดได้ถูกต้อง พบเพียง favicon 404 เดิมซึ่งไม่กระทบการใช้งานเกม</p>
+    </main>
+  </body>
+</html>
